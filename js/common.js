@@ -11,6 +11,9 @@ $(function(){
 	
 });
 
+// 允许客户端写入读取cookie
+$.ajaxSetup({crossDomain: true, xhrFields: {withCredentials: true}});
+
 // 配置全局的url
 var	 APP = {
 	baseUrl : 'http://fullstack.net.cn:3000'

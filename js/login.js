@@ -3,7 +3,6 @@ $(function() {
 	$('#loginBtn').on('click', function() {
 		// 获取表单数据
 		var result = $('#loginForm').serializeToJson();
-		console.log(result);
 
 		// 验证用户名是否为空
 		if(!$.trim(result.username)) {
