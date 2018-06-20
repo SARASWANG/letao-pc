@@ -1,5 +1,17 @@
-
-
+// 拦截登录
+$.ajax({
+	url: `${APP.baseUrl}/employee/checkRootLogin`,
+	type : 'get',
+	async : false,
+	success : function(msg) {
+		if (msg.error) {
+			location.href='login.html';
+		}
+	},
+	error : function(error) {
+		console.log(error);
+	}
+})
 
 $(function() {
 	// 后端的数据显示在页面中
@@ -11,7 +23,6 @@ $(function() {
 			pageSize: 100
 		},
 		success: function (response) {
-			console.log(response);
 			// 拼接数据
 			var html = template('usertpl', response);
 			// 渲染数据
